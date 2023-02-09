@@ -7,10 +7,10 @@
 //"Mężczyzna w wieku emerytalnym"
 
 string myName = "Kinga";
-bool myWomen = true;
+bool isWomen = true;
 int myAge = 28;
 
-if (myWomen == true && myAge < 30)    //kobieta poniżej 30 lat
+if (isWomen == true && myAge < 30)    //kobieta poniżej 30 lat
             {
                 Console.WriteLine("Kobieta poniżej 30 lat.");
             }
@@ -18,19 +18,19 @@ else if (myName == "Kinga" && myAge == 33)   //"Kinga lat 33"
             {
                 Console.WriteLine("Kinga lat 33");
             }
-else if (myWomen == false && myAge >=12 && myAge < 18)   //"Niepełnoletni mężczyzna" 
+else if (isWomen == false && myAge >=12 && myAge < 18)   //"Niepełnoletni mężczyzna" 
             {
                 Console.WriteLine("Niepełnoletni mężczyzna."); 
             }
-else if (myWomen == false && myAge < 12)   //"Chłopiec"
+else if (isWomen == false && myAge < 12)   //"Chłopiec"
             {
                 Console.WriteLine("Chlopiec.");
             }
-else if (myWomen == true && myAge >= 60)   //"Kobieta w wieku emerytalnym"
+else if (isWomen == true && myAge >= 60)   //"Kobieta w wieku emerytalnym"
             {
                 Console.WriteLine("Kobieta w wieku emerytalnym.");
             }
-else if (myWomen == false && myAge >= 75)   //"Mężczyzna w wieku emerytalnym"
+else if (isWomen == false && myAge >= 75)   //"Mężczyzna w wieku emerytalnym"
             {
             Console.WriteLine("Mężczyzna w wieku emerytalnym.");
             }
