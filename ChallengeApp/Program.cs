@@ -8,9 +8,9 @@
 
 string myName = "Kinga";
 bool myWomen = true;
-int myAge = 30;
+int myAge = 28;
 
-if (myWomen == true && myAge <= 30)    //kobieta poniżej 30 lat
+if (myWomen == true && myAge < 30)    //kobieta poniżej 30 lat
             {
                 Console.WriteLine("Kobieta poniżej 30 lat.");
             }
@@ -36,5 +36,5 @@ else if (myWomen == false && myAge >= 75)   //"Mężczyzna w wieku emerytalnym"
             }
 else
 {
-    Console.WriteLine("Nieznana osoba"); //myAge = 18 spełnia warunek
+    Console.WriteLine("Nieznana osoba"); //myAge = 18 && myAge = 30 spełnia warunek
 }
