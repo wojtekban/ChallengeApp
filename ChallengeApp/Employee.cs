@@ -17,12 +17,7 @@
 
         public void AddGrade(float grade)
         {
-            // 3.99
-            // 3.45
-
-            // int valueinint = (int)grade;
-            // float f = valueinint;
-
+ 
             if (grade >= 0 && grade <= 100)
             {
                 this.grades.Add(grade);
