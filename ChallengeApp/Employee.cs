@@ -17,7 +17,51 @@
 
         public void AddGrade(float grade)
         {
-            this.grades.Add(grade);
+            // 3.99
+            // 3.45
+
+            // int valueinint = (int)grade;
+            // float f = valueinint;
+
+            if (grade >= 0 && grade <= 100)
+            {
+                this.grades.Add(grade);
+            }
+            else
+            {
+                Console.WriteLine("Proszę wybrać punkty z przedziału od 0 do 100");
+            }
+        }
+        public void AddGrade(string grade)
+        {
+            {
+                if(float.TryParse(grade, out float result))
+                {
+                    this.AddGrade(result);
+                }
+                else 
+                {
+                    Console.WriteLine("string in not float");
+                }
+            }
+        }
+
+        public void AddGrade(long grade)
+            {
+            float result = grade;
+            this.AddGrade(result);
+            }
+
+        public void AddGrade(double grade)
+        {
+            float result = (float)grade;
+            this.AddGrade(result);
+        }
+
+        public void AddGrade(decimal grade)
+        {
+            float result = (float)grade;
+            this.AddGrade(result);
         }
 
         public  Statistics GetStatistics() 
@@ -36,8 +80,7 @@
             }
 
             statistics.Average = statistics.Average / this.grades.Count;
-                //
-
+             
             return statistics;
         }
     }
