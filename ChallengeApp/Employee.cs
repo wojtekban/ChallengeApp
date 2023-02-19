@@ -1,4 +1,7 @@
-﻿namespace ChallengeApp
+﻿using System.Net.Http.Headers;
+using System.Runtime.InteropServices;
+
+namespace ChallengeApp
 {
     public class Employee
     {
@@ -24,7 +27,7 @@
             }
             else
             {
-                Console.WriteLine("Proszę wybrać punkty z przedziału od 0 do 100");
+                throw new Exception("Proszę wybrać punkty z przedziału od 0 do 100");
             }
         }
         public void AddGrade(string grade)
@@ -40,7 +43,7 @@
                 }
                 else 
                 {
-                    Console.WriteLine("string in not float");
+                    throw new Exception("string in not float");
                 }
             }
         }
@@ -75,8 +78,7 @@
                     this.grades.Add(20);
                     break;
                 default:
-                    Console.WriteLine("Wrong letter");
-                    break;
+                    throw new Exception("Wrong letter");
             }
 
         }
