@@ -3,20 +3,14 @@ using System.Runtime.InteropServices;
 
 namespace ChallengeApp
 {
-    public class Employee
+    public class Employee : Person
     {
         private List<float> grades = new List<float>(); 
         public Employee(string name, string surName, int age)
+            : base(name, surName, age)
         {
-            this.Name = name;
-            this.SurName = surName;
-            this.Age = age;
+
         }
-        public string Name { get; private set; }
-
-        public string SurName { get; private set; }
-
-        public int Age { get; private set; }
 
         public void AddGrade(float grade)
         {
