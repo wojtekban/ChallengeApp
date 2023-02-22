@@ -4,6 +4,9 @@
     {
         private const string fileName = "grades.txt";
 
+
+        public override event GradeAddedDelegate GradeAdded;
+
         public EmployeeInFile(string name, string surName, int age)
             : base(name, surName, age)
         {
@@ -16,6 +19,10 @@
                 using (var writer = File.AppendText(fileName))
                 {
                     writer.WriteLine(grade);
+                    if (GradeAdded != null)
+                    {
+                        GradeAdded(this, new EventArgs());
+                    }
                 }
             }
             else
@@ -30,11 +37,7 @@
             {
                 if (float.TryParse(grade, out float result))
                 {
-                    using(var writer = File.AppendText(fileName))
-                    {
-                        writer.WriteLine(grade);
-                    }
-
+                    this.AddGrade(result);
                 }
                 else if (char.TryParse(grade, out char resultLetter))
                 {

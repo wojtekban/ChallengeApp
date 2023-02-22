@@ -2,7 +2,11 @@
 {
     public class Supervisor : IEmployee
     {
-         private List<float> grades = new List<float>();
+        public delegate void GradeAddedDelegate(object sender, EventArgs args);
+
+        public  event GradeAddedDelegate GradeAdded;
+
+        private List<float> grades = new List<float>();
 
         public Supervisor(string name, string surName, int age)
             {
@@ -22,6 +26,10 @@
             if (grade >= 1 && grade <= 6)
             {
                 this.grades.Add(grade);
+                if (GradeAdded != null)
+                {
+                    GradeAdded(this, new EventArgs());
+                }
             }
             else
             {
@@ -29,7 +37,13 @@
             }
         }
         public void AddGrade(string grade)
-        {       
+        {
+            if (float.TryParse(grade, out float result))
+            {
+                this.AddGrade(result);
+            }
+            else
+            { 
                 switch (grade)
                 {
                     case "6":
@@ -61,7 +75,7 @@
                     default:
                         throw new Exception("Wrong letter");
                 }
-           
+        }   
 
         }
         public void AddGrade(long grade)
