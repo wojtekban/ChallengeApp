@@ -30,6 +30,7 @@
         public abstract void AddGrade(double grade);
 
         public abstract void AddGrade(decimal grade);
+
         public abstract Statistics GetStatistics();
     }
 }
